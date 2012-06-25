@@ -27,6 +27,7 @@ public class DBpediaLoader
     {
     	Neo4jGraph neo = new Neo4jGraph("dbpedia4neo");
     	Sail sail = new GraphSail(neo);
+		sail.initialize();
     	CommitManager manager = TransactionalGraphHelper.createCommitManager(neo, 10000);
 
     	for (String file: args) {
