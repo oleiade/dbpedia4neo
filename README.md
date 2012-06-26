@@ -33,8 +33,7 @@ mvn exec:java\
 -Dexec.args="yourfirstntfile yoursecondntfile etc, etc..."
 ```
 
-Tips
-####
+####Tips
 In order to use a lot of nt files without having to manually list them in -Dexec.args,
 you could use your shell backquote feature like this:
 ```bash
