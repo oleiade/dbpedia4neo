@@ -25,12 +25,15 @@ Usage
 =====
 
 To run dbpedia4neo, use the maven command-line util mvn, passing it the dbpedia4neo loader class
-and the dbpedia dump triple file(s) you'd like to use. And there you go; if everything goes fine,
-you'll have, sooner or later, a `dbpedia4neo` neo4j database directory, fulfilled with a dbpedia dump graph.
+and as arguments :
+ - the desired output database folder path/name
+ - the dbpedia dump triple file(s) you'd like to use.
+And there you go; if everything goes fine,
+you'll have, sooner or later, a `youroutputdbpath` neo4j database directory, fulfilled with a dbpedia dump graph.
 ```bash
 mvn exec:java\
 -Dexec.mainClass=org.acaro.dbpedia4neo.inserter.DBpediaLoader\
--Dexec.args="yourfirstntfile yoursecondntfile etc, etc..."
+-Dexec.args="youroutputdbpath yourfirstntfile yoursecondntfile etc, etc..."
 ```
 
 ####Tips
