@@ -30,6 +30,10 @@ mvn exec:java\
 -Dexec.args="yourntfile"
 ```
 
+Todo
+====
+ - Ability to pass a directory containing the nt files as argument
+
 Nota
 ====
 I'm not a javaist at all and made this Readme as a memo on how to run dbpedia4neo for everyone that's
