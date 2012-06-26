@@ -29,12 +29,12 @@ and as arguments :
  - the desired output database folder path/name
  - the dbpedia dump triple file(s) you'd like to use.
 And there you go; if everything goes fine,
-you'll have, sooner or later, a `youroutputdbpath` neo4j database directory, fulfilled with a dbpedia dump graph.
+you'll have, sooner or later, a `dbpath` neo4j database directory, fulfilled with a dbpedia dump graph.
 
 ```bash
 mvn exec:java\
 -Dexec.mainClass=org.acaro.dbpedia4neo.inserter.DBpediaLoader\
--Dexec.args="youroutputdbpath yourfirstntfile yoursecondntfile etc, etc..."
+-Dexec.args="dbpath fstntfile secntfile etc, etc..."
 ```
 
 ####Tips
@@ -42,7 +42,7 @@ In order to use a lot of nt files without having to manually list them in -Dexec
 you could use your shell backquote feature like this:
 ```bash
 [...]\
--Dexec.args="`ls myfirstfoldercontainingntfiles` `ls mysecondfoldercontainingntfiles` etc, etc..."
+-Dexec.args="dbpath `ls fstfolder secfolder` etc, etc..."
 ```
 And Tadaaaa every it will automatically handle the content of the folder you listed as files to process.
 Be aware that using this method, dbpedia4neo will try to load every file from these folders,
