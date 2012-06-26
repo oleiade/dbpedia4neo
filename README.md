@@ -1,4 +1,7 @@
-A set of hacks to setup a dbpedia endpoint through neo4j
+DBpedia4Neo
+===========
+A java util to setup a dbpedia endpoint through neo4j.
+
 
 Installation
 ============
