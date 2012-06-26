@@ -27,8 +27,20 @@ you'll have, sooner or later, a `dbpedia4neo` neo4j database directory, fulfille
 ```bash
 mvn exec:java\
 -Dexec.mainClass=org.acaro.dbpedia4neo.inserter.DBpediaLoader\
--Dexec.args="yourntfile"
+-Dexec.args="yourfirstntfile yoursecondntfile etc, etc..."
 ```
+
+Tips
+####
+In order to use a lot of nt files without having to manually list them in -Dexec.args,
+you could use your shell backquote feature like this:
+```bash
+[...]\
+-Dexec.args="`ls myfirstfoldercontainingntfiles` `ls mysecondfoldercontainingntfiles` etc, etc..."
+```
+And Tadaaaa every it will automatically handle the content of the folder you listed as files to process.
+Be aware that using this method, dbpedia4neo will try to load every file from these folders,
+including those which are not nt files...
 
 Todo
 ====
