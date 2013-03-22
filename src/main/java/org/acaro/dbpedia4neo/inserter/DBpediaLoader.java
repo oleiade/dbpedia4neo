@@ -91,7 +91,7 @@ public class DBpediaLoader
 			** If arg is a file, add it to collection
 			*/
 			if (file.isFile())
-				files_collection.add(arg);
+				files_collection.add(file);
 			/*
 			** Else, if arg is a directory, seek .nt files
 			** recursively through it.
