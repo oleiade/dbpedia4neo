@@ -37,22 +37,22 @@
 		<dependency>
 	        <groupId>net.fortytwo</groupId>
 	        <artifactId>linked-data-sail</artifactId>
-	        <version>0.7</version>
+	        <version>1.0</version>
 	    </dependency>
 		<dependency>
 			<groupId>com.tinkerpop.blueprints</groupId>
 			<artifactId>blueprints-graph-sail</artifactId>
-			<version>0.7</version>
+			<version>1.2</version>
 		</dependency>
 		<dependency>
 			<groupId>com.tinkerpop.blueprints</groupId>
 			<artifactId>blueprints-sail-graph</artifactId>
-			<version>0.7</version>
+			<version>1.2</version>
 		</dependency>
 		<dependency>
 			<groupId>com.tinkerpop.blueprints</groupId>
 			<artifactId>blueprints-neo4j-graph</artifactId>
-			<version>0.7</version>
+			<version>1.2</version>
 		</dependency>
 		<dependency>
 			<groupId>junit</groupId>
@@ -146,5 +146,10 @@
 			<name>openrdf</name>
 			<url>http://repo.aduna-software.org/maven2/releases/</url>
 		</repository>
+        <repository>
+            <id>sonatype-nexus-snapshots</id>
+            <name>Sonatype Nexus Snapshots</name>
+            <url>https://oss.sonatype.org/content/repositories/releases</url>
+        </repository>
 	</repositories>
 </project>
