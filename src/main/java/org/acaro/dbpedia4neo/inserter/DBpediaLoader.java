@@ -21,8 +21,8 @@ import org.openrdf.sail.SailException;
 
 import com.tinkerpop.blueprints.pgm.impls.neo4j.Neo4jGraph;
 import com.tinkerpop.blueprints.pgm.oupls.sail.GraphSail;
-import com.tinkerpop.blueprints.pgm.util.TransactionalGraphHelper;
-import com.tinkerpop.blueprints.pgm.util.TransactionalGraphHelper.CommitManager;
+//import com.tinkerpop.blueprints.pgm.util.TransactionalGraphHelper;
+//import com.tinkerpop.blueprints.pgm.util.TransactionalGraphHelper.CommitManager;
 
 public class DBpediaLoader
 {
@@ -33,20 +33,20 @@ public class DBpediaLoader
     	List<File> args_files = extractFileArgs(Arrays.copyOfRange(args, 1, args.length));
     	Sail sail = new GraphSail(neo);
 		sail.initialize();
-    	CommitManager manager = TransactionalGraphHelper.createCommitManager(neo, 10000);
+    	//CommitManager manager = TransactionalGraphHelper.createCommitManager(neo, 10000);
 
     	for (File file: args_files) {
     		System.out.println("Loading " + file + ": ");
-    		loadFile(file, sail.getConnection(), sail.getValueFactory(), manager);
+    		loadFile(file, sail.getConnection(), sail.getValueFactory()/*, manager*/);
     		System.out.print('\n');
     	}
-    	manager.close();
+    	//manager.close();
     	sail.shutDown();
     }
 
-	private static void loadFile(final File file, SailConnection sc, ValueFactory vf, CommitManager manager) throws RDFParseException, RDFHandlerException, FileNotFoundException, IOException {
+	private static void loadFile(final File file, SailConnection sc, ValueFactory vf/*, CommitManager manager*/) throws RDFParseException, RDFHandlerException, FileNotFoundException, IOException {
 		NTriplesParser parser = new NTriplesParser(vf);
-		TripleHandler handler = new TripleHandler(sc, manager);
+		TripleHandler handler = new TripleHandler(sc/*, manager*/);
 		parser.setRDFHandler(handler);
 		parser.setStopAtFirstError(false);
 		parser.setParseErrorListener(new ParseErrorListener() {
